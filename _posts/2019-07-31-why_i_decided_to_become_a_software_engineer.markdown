@@ -1,0 +1,9 @@
+---
+layout: post
+title:      "Why I decided to become a Software Engineer"
+date:       2019-07-31 16:02:02 +0000
+permalink:  why_i_decided_to_become_a_software_engineer
+---
+
+
+I,  didn’t understand what it meant to be a software engineer.  I always thought of it as a career my son may want to go into because he loves computers, video games, and I wanted for him to one day be able to create one too.  I knew that coding and software engineering had something to do with that.  Coding was foreign, and looked like the Matrix, literally!  I didn’t think that this was an option for me.  I come from a background of teaching and tutoring specializing in Junior High Mathematics. I wasn’t a video gamer or a computer person.  Then, I came to a crossroads in my life and I realized I needed to make some changes.  I began to reevaluate my life choices and thought about what steps may get me closer to what I want to achieve in life.  I thought about what I like to do, what I’m good at and skills that I may be able to cultivate.  I’m analytical, creative, logical.  What career path encompasses these skills.  What career path welcomes forward thinking, team building, and growth?? That may have some work from home perks?  As I began to narrow down my choices I happened to also make a new friend that was highly skilled in technology. Who worked in the industry.   I thought that’s interesting and still was on my own personal journey.  Then I encountered this program that enlightened me on this career path in technology specifically software engineering and coding, and all of the opportunities that were available, the diversity that is within it, and the level of compensation that was also obtainable.  My “Aaaahaa!” moment was then achieved and I realized this is it!  This is my next move! I can do that!! It checks off my boxes, and I feel this is where I need to be. I decided  I wanted to be a software engineer.  
