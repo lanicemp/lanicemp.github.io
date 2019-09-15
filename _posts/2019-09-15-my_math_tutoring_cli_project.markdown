@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "My Math Tutoring CLI Project "
-date:       2019-09-15 20:09:19 +0000
+date:       2019-09-15 16:09:20 -0400
 permalink:  my_math_tutoring_cli_project
 ---
 
