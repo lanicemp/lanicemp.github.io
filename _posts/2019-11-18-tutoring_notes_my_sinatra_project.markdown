@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Tutoring Notes My Sinatra Project "
-date:       2019-11-18 23:42:26 +0000
+date:       2019-11-18 18:42:27 -0500
 permalink:  tutoring_notes_my_sinatra_project
 ---
 
