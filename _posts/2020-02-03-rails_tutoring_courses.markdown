@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Rails Tutoring Courses"
-date:       2020-02-04 00:34:30 +0000
+title:      "Rails Tutoring Courses Project"
+date:       2020-02-03 19:34:31 -0500
 permalink:  rails_tutoring_courses
 ---
 
