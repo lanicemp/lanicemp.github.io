@@ -9,7 +9,8 @@ permalink:  how_i_overcame_my_postgresql_connection_and_role_error
 
   When I started my JavaScript project I decided that I wanted to use PostgreSQL for my database instead of MySQL so that I would be successful when deploying my project onto Heroku.   It is necessary to have a PostgreSQL database in order to have Heroku host your application. To avoid the headache later of converting my database from MySQL to PostgreSQL, I started with PostgreSQL.   I started building of my project and encountered and error…. 
 
- ```
+
+```
 	psql: error: could not connect to server: could not connect to server: No such file or directory
         Is the server running locally and accepting
        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"
@@ -91,14 +92,15 @@ Created database '<app_name>_test'
 
 	
 Great that worked! But in retrospect I think I could of avoided the login error if I would have created a login when I initially created the role using the code below 
+
 	`CREATE ROLE <role_name> WITH LOGIN CREATEDB CREATEROLE`
 	
 	
 I'm glad that is resolved, and the data base was created!! I can now move on with my application and it is running on PostgreSQL. 
 
 Resources:
-*  <https://www.google.com/search?q=what+is+a+role+in+database&oq=What+is+a+role+in+da&aqs=chrome.1.69i57j0l7.5991j1j7&sourceid=chrome&ie=UTF-8> 
+*  [<https://www.google.com/search?q=what+is+a+role+in+database&oq=What+is+a+role+in+da&aqs=chrome.1.69i57j0l7.5991j1j7&sourceid=chrome&ie=UTF-8> ](http://)
 
-* https://medium.com/@harshityadav95/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3 
-* https://www.postgresql.org/docs/8.1/sql-createrole.html
-
+* [https://medium.com/@harshityadav95/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3 ](http://)
+* [https://www.postgresql.org/docs/8.1/sql-createrole.html
+](http://)
