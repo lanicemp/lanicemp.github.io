@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "How I Overcame My PostgreSQL Connection and Role Error "
-date:       2020-08-09 19:22:19 +0000
+date:       2020-08-09 15:22:20 -0400
 permalink:  how_i_overcame_my_postgresql_connection_and_role_error
 ---
 
@@ -9,9 +9,11 @@ permalink:  how_i_overcame_my_postgresql_connection_and_role_error
 
   When I started my JavaScript project I decided that I wanted to use PostgreSQL for my database instead of MySQL so that I would be successful when deploying my project onto Heroku.   It is necessary to have a PostgreSQL database in order to have Heroku host your application. To avoid the headache later of converting my database from MySQL to PostgreSQL, I started with PostgreSQL.   I started building of my project and encountered and error…. 
 
- 	psql: error: could not connect to server: could not connect to server: No such file or directory
+ ```
+	psql: error: could not connect to server: could not connect to server: No such file or directory
         Is the server running locally and accepting
        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"
+```
 
 
 This was alarming, so I started my research on how to resolve this error.  This began with downloading PostgreSQL  onto my windows laptop.  I thought that would have better results but I still encountered the same error.  After days of trying to trouble shoot I ended up uninstalling the PostgreSQL that I downloaded from their site. 
@@ -27,10 +29,13 @@ rails db:create
 	
 BAM!!!! Another error 
 
-	FATAL:  role "<role_name>" does not exist
-	Couldn't create '<app_name>_development' database. Please check your configuration.
-	rails aborted!
-	PG::ConnectionBad: FATAL:  role "<role_name>" does not exist
+```
+FATAL:  role "<role_name>" does not exist
+Couldn't create '<app_name>_development' database. Please check your configuration.
+rails aborted!
+PG::ConnectionBad: FATAL:  role "<role_name>" does not exist
+```
+
 	
 ARGGGG!!!
 
@@ -55,26 +60,35 @@ postgres=# CREATE ROLE <role_name> with CREATEDB CREATEROLE
 
 It went through no error!! .I ` \q` out of there and tried again. 
  
-	rails db:create
+`rails db:create`
+
 	
 BAM Another error!
 
-	FATAL:  role "<role_name>" is not permitted to log in
-	Couldn't create '<app_name>_development' database. Please check your configuration.
-	rails aborted!
-	PG::ConnectionBad: FATAL:  role "<role_name>" is not permitted to log in
+```
+FATAL:  role "<role_name>" is not permitted to log in
+Couldn't create '<app_name>_development' database. Please check your configuration.
+rails aborted!
+PG::ConnectionBad: FATAL:  role "<role_name>" is not permitted to log in
+```
+
 
 Do you see that my role_name exist!!!! I still have an error but the role exist now. :) Trouble shoot some more.  Back to Google….  "how to permit login for a role in PostgreSQL?" I found a new command on how to alter the role.  Let's get back into postgres
 
-	sudo -u postgres psql
-	postgres=# ALTER ROLE <role_name> with LOGIN CREATEDB CREATEROLE
+```
+sudo -u postgres psql
+postgres=# ALTER ROLE <role_name> with LOGIN CREATEDB CREATEROLE
+```
 No error in altering the role then.` /q` out of postgres and try again. 
 
-	 rails db:create
-	WARNING:  could not flush dirty data: Function not implemented
-	Created database '<app_name>_development'
-	WARNING:  could not flush dirty data: Function not implemented
-	Created database '<app_name>_test'
+ ```
+rails db:create
+WARNING:  could not flush dirty data: Function not implemented
+Created database '<app_name>_development'
+WARNING:  could not flush dirty data: Function not implemented
+Created database '<app_name>_test'
+```
+
 	
 Great that worked! But in retrospect I think I could of avoided the login error if I would have created a login when I initially created the role using the code below 
 	`CREATE ROLE <role_name> WITH LOGIN CREATEDB CREATEROLE`
