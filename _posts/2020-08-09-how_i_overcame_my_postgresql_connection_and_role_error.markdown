@@ -19,7 +19,7 @@ permalink:  how_i_overcame_my_postgresql_connection_and_role_error
 
 This was alarming, so I started my research on how to resolve this error.  This began with downloading PostgreSQL  onto my windows laptop.  I thought that would have better results but I still encountered the same error.  After days of trying to trouble shoot I ended up uninstalling the PostgreSQL that I downloaded from their site. 
 
-I found a website that showed much more promise.  https://medium.com/@harshityadav95/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3 by Hardhit Yadav, and followed his instructions on how to remove the error.   These commands were very helpful and easy to follow. Furthermore by following his directions  I was able to successfully overcome my connection error.  I began another project. 
+I found a website that showed much more promise.  [https://medium.com/@harshityadav95/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3](http://) by Hardhit Yadav, and followed his instructions on how to remove the error.   These commands were very helpful and easy to follow. Furthermore by following his directions  I was able to successfully overcome my connection error.  I began another project. 
 
 ```
 rails new <app_name> --api --database=postgresql
@@ -47,7 +47,7 @@ Okay, but guess what! I have connection! No more connection error.   One step in
 ```
 
 
-The error states that my role does not exist, so,  I have to exist to overcome this error.  I head to google and ask "How to create a role in PostgreSQL?"  I found another helpful site with commands https://www.postgresql.org/docs/8.1/sql-createrole.html
+The error states that my role does not exist, so,  I have to exist to overcome this error.  I head to google and ask "How to create a role in PostgreSQL?"  I found another helpful site with commands[ https://www.postgresql.org/docs/8.1/sql-createrole.html](http://)
 
 Yayyy!!
 
