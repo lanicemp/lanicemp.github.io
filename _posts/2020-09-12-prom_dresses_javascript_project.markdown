@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Prom Dresses JavaScript Project"
-date:       2020-09-13 03:21:27 +0000
+date:       2020-09-12 23:21:28 -0400
 permalink:  prom_dresses_javascript_project
 ---
 
@@ -23,9 +23,37 @@ bundle install
 *in config initializers cors uncomment the code and change the word example to a * to allow all locations
 ```
 
-With the commands above I was successfully  able to create my main file for this application that would contain my prom_dress-api directory with the PostgreSQL database.  I also created my table for my dress and its attributes.   I also added some gems that would help with the process, as will as updated my cors file to allow different locations.  
+With the commands above I was successfully  able to create my main file for this application, that would contain my prom_dress-api directory with a PostgreSQL database.  I also created my dress table its attributes.  Futhermore,  I added some gems that would help with the process, as well as updated my cors file to allow different locations.  
 
-Once this was built out I updated my dress controller to render JSON.  This allows for the information in the table to be able to populate by calling a URL. Then I am able to view the information in my database on my screen.  I made sure to add seed data so that I can be sure this step was working.  
+Once this was built out I updated my dress controller to render JSON.  This allows for the information in the table to be able to populate by calling a URL. 
+```
+def index
+    @dresses = Dress.all
+
+    render json: @dresses, except:[:created_at, :updated_at] ,status: 200
+  end
+
+  # GET /dresses/1
+  def show
+    @dress = Dress.find(params[:id])
+    render json: @dress, status: 200 
+  end
+```
+The code above  shows the index method and the show method and how I added the render to json to them. Then I am able to view the information in my database on my screen.  I made sure to add seed data so that I can be sure this step was working. Below is an example of my seed data.  I decided that I didnt need alot of seed data because I was creating a form that would then add to the  database.  Only one item would be able to show me if the code was rendering properly. 
+
+```
+Dress.create ([
+    {name:'ELLIE FORMAL SATIN HIGH SLIT DRESS',
+    silhouette:('empire waist'' fit and flare'),
+    neckline: 'v nec',
+    length:'long',
+    color:'mauve',
+    img_url:'https://cdn.shopify.com/s/files/1/0070/8853/7651/products/05002-0138_1_1194x.jpg?v=1572403438',
+    price:109.90,
+    dress_id:1
+    }, 
+])
+```
 
 NEXT STEPS: JavaScript Frontend
 
@@ -62,7 +90,7 @@ I also made sure that I connected the script for the different files to the inde
 ```
 
 Working on this application had its challenges and definitely pushed my understanding of JavaScript as well.  I feel much more confident with the use of event listeners, getting elements by id , and also a better understanding of scope.  
-I understand the creating and populating of the json as html on the page.  I struggled with getting the json to render automatically when working with different databases.  As well as creating functions for special features and where those functions are to be placed to make sure that they are called properly.  
+I understand how to create and populate json as html on the page.  I struggled with getting the json to render automatically when working with different databases.  As well as creating functions for special features and where those functions are to be placed to make sure that they are called properly.  
 
 Overall I am excited about what I was able to create and look forward to making another application.  
 
